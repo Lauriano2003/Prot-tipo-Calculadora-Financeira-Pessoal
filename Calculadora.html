@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+    font-weight: bold;
+    color: deepskyblue;
+    text-decoration: underline;
+    
+}
+
+input{
+    color: deepskyblue;
+    font-size: medium;
+    
+    
+}
+body{
+background-image: url(https://images.pexels.com/photos/10099313/pexels-photo-10099313.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+background-size:cover;
+text-align: center;
+font-style: italic
+}
+button{
+    color: rgb(38, 232, 38);
+    font-weight: bold;
+    font-size: large;
+    
+}
+.Valores{
+    color:blue;
+    font-size: large;
+    font-weight: bold;
+    
+}
+    </style>
+
+</head>
+<body>
+    <h1>Calculadora Winda's</h1>
+
+
+    Informe o numero de Winda's que deseja: <input type="number" id="input_numero_winda"><br><br>
+    Informe o tamanho da janela a ser automatizada em metros: <input type="number" id="input_tamanho_janela"><br><br>
+    Informe se a instalação será na Janela Basculante(1), Janela maxim-ar(2) ou Janela de correr(3): <input type="number" id="input_tipo_de_janela" min="1" max="3"><br><br>
+    Caso tenha, informe o código promocional: <input type="text" id="input_codigo_promocional"><br><br>
+    Informe a distnatcia em Km entre a Rua cantagalo 1200 e o local para a entrega: <input  type="number" id="input_distancia_frete"><br><br>
+    <button onclick="Calcular()">Calcular</button><br><br>
+
+
+    <div id="Valores"></div>
+
+</body>
+</html>
+<script>
+    function Calcular(){
+        var numWindas = Number(input_numero_winda.value)
+        var tamanho_janela = Number(input_tamanho_janela.value)
+        var tipoJanela = Number(input_tipo_de_janela.value)
+        var codPromo = input_codigo_promocional.value
+        var distancia_frete = Number(input_distancia_frete.value)
+        var precoUnitario = 684
+        var desconto = 50*numWindas
+        var Preco_da_compra = precoUnitario*numWindas
+        var valor_frete = distancia_frete*4
+
+        if(codPromo == "PROMO-50"){
+            Preco_da_compra -= desconto
+        }
+        if(tamanho_janela>1.5){
+            precoUnitario += (tamanho_janela-1.5)*40
+        }
+        if (tipoJanela>1){
+            precoUnitario += 40
+        }
+
+         Valores.innerHTML = `<p Class="Valores"> Quantidade de janelas solicitadas: ${numWindas} <br><br> Tamnho informado: ${tamanho_janela} metros <br><br> Tipo da janela: ${tipoJanela} <br><br> Distancia informada da Rua Cantagalo 1200: ${distancia_frete} KM <br><br> Valor final da automatização: R$ ${Preco_da_compra} <br><br> Valor de frete: R$ ${valor_frete} <br><br> Valor total da compra: R$ ${Preco_da_compra+valor_frete}</p>`
+
+    }
+</script>

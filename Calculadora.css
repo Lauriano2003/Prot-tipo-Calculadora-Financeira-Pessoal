@@ -1,0 +1,33 @@
+h1{
+    font-weight: bold;
+    color: deepskyblue;
+    text-decoration: underline;
+    
+}
+
+input{
+    color: deepskyblue;
+    font-size: medium;
+    
+    
+    
+}
+body{
+background-image: url(https://images.pexels.com/photos/10099313/pexels-photo-10099313.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+background-size:cover;
+text-align: center;
+font-style: italic
+}
+button{
+    color: rgb(38, 232, 38);
+    font-weight: bold;
+    font-size: large;
+    
+}
+.Valores{
+    color:blue;
+    font-size: large;
+    font-weight: bold;
+    
+}
+
